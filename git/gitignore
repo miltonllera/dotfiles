@@ -1,0 +1,10 @@
+.ctagsignore
+tags
+.python-version
+*.vscode*
+*__pycache__*
+*.ipynb_checkpoints*
+*.pdf
+plots/*
+data/*
+*.DS_Store
