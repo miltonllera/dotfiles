@@ -38,4 +38,4 @@ source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/plugins.sh
 
 # scripts
-fpath+=('/Users/monterml/.local/bin/scripts/')
+fpath+=('/Users/mlle/.local/bin/scripts/')

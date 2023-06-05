@@ -3,7 +3,8 @@
 #
 
 # macos
-eval "$($(brew --prefix)/bin/brew shellenv)"
+HOMEBREW_DIR="/opt/homebrew/bin/brew"
+eval "$($HOMEBREW_DIR shellenv)"
 
 # poetry
 export PATH="$HOME/.poetry/bin:$PATH"
