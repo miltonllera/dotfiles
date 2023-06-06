@@ -12,6 +12,30 @@ to create the relevant symlinks to all the config values. To upgrade your submod
 git submodule update --init --remote
 ```
 
+To update submodules, do:
+
+```
+cd mysubmoduledir
+git fetch
+git checkout master # or any other branch that you need the latest of
+git merge origin/master
+cd -  # go back to the top repo
+git status # should show that your submodule changed
+git add mysubmoduledir
+git commit -m "Updated my solution to use latest sub project."
+```
+
+or this if you do not have any other modifications and you are already in the correct branch.
+
+```
+cd mysubmoduledir
+git pull # assumes you are already on the branch you need to be on
+cd -
+git commit -am "Updated submodule" # assumes you had no other modified files
+```
+
+See this [StackOverflow issue for more details](https://stackoverflow.com/questions/13844996/git-submodule-init-not-pulling-latest-commit).
+
 License
 -------
 

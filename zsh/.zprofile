@@ -15,6 +15,9 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# auto-activation
+ # if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
+
 # poetry
 export PATH=$PATH:"$HOME/Library/Python/3.9/bin"
 
