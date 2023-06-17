@@ -12,6 +12,8 @@ to create the relevant symlinks to all the config values. To upgrade your submod
 git submodule update --init --remote
 ```
 
+Updating
+========
 To update submodules, do:
 
 ```
@@ -35,6 +37,62 @@ git commit -am "Updated submodule" # assumes you had no other modified files
 ```
 
 See this [StackOverflow issue for more details](https://stackoverflow.com/questions/13844996/git-submodule-init-not-pulling-latest-commit).
+
+Saving modifications to submodules
+===================================
+
+If changes are made and commited to any submodule (e.g. Neovim), said commit will be left in a headless state, i.e. the branch will not move forward. Thus, the changes will not be reflected in the origin repository of said submodule. To fix this, we have several options:
+
+1. If you have already commited the changes, then reate a branch at the headless commit, checkout master and merge:
+``` bash
+
+git checkout master  # this is fine as long as we create the branch just afterwards
+git branch <branch-name> <commit-hash>
+git merge <branch-name>
+git branch -d <branch-name>
+git push origin master
+```
+Note that in this case running submodule updates is not required as we made the modifications in the submodule version itself.
+
+2. Use options in command line
+
+```bash
+# cd back to project root
+git submodule update --remote --merge
+# or
+git submodule update --remote --rebase
+```
+
+Recommended alias:
+
+```bash
+git config alias.supdate 'submodule update --remote --merge'
+# do submodule update with
+git supdate
+```
+
+As far as I understand, this will update **all** submodules, so it may not be ideal.
+
+3. Add options into config file
+
+Another solution is to change submodule update behavior in the gitmodule file by by setting submodule.$name.update to merge or rebase. It basically means you can do git submodule update --remote without passing --merge or --rebase explcitly, but read from config file automatically.
+
+Here's an example about how to config the default update behavior of submodule update in .gitmodule.
+
+```bash
+[submodule "bash/plugins/dircolors-solarized"]
+    path = bash/plugins/dircolors-solarized
+    url = https://github.com/seebi/dircolors-solarized.git
+    update = merge # <-- this is what you need to add
+```
+Or configure it through command line,
+
+```bash
+# replace $name with a real submodule name
+git config -f .gitmodules submodule.$name.update merge
+```
+
+See [this StackOverflow issue](https://stackoverflow.com/questions/18770545/why-is-my-git-submodule-head-detached-from-master/55570998#55570998) for more details.
 
 License
 -------
