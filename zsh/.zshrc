@@ -39,3 +39,5 @@ source $ZDOTDIR/plugins.sh
 
 # scripts
 fpath+=('/Users/mlle/.local/bin/scripts/')
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

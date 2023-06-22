@@ -12,8 +12,7 @@ to create the relevant symlinks to all the config values. To upgrade your submod
 git submodule update --init --remote
 ```
 
-Updating
-========
+## Updating
 To update submodules, do:
 
 ```
@@ -38,8 +37,7 @@ git commit -am "Updated submodule" # assumes you had no other modified files
 
 See this [StackOverflow issue for more details](https://stackoverflow.com/questions/13844996/git-submodule-init-not-pulling-latest-commit).
 
-Saving modifications to submodules
-===================================
+## Saving modifications to submodules
 
 If changes are made and commited to any submodule (e.g. Neovim), said commit will be left in a headless state, i.e. the branch will not move forward. Thus, the changes will not be reflected in the origin repository of said submodule. To fix this, we have several options:
 
