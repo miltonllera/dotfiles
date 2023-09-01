@@ -2,9 +2,15 @@
 # .zprofile
 #
 
-# macos
-HOMEBREW_DIR="/opt/homebrew/bin/brew"
-eval "$($HOMEBREW_DIR shellenv)"
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then  # if Linux
+  HOMEBREW_DIR="/home/linuxbrew/.linuxbrew"
+elif [[ "$OSTYPE" == "darwin"* ]]; then  # if MacOS
+  HOMEBREW_DIR="/opt/homebrew"
+else
+  echo "Unrecognized OS type: $OSTYPE"
+fi
+
+eval "$($HOMEBREW_DIR/bin/brew shellenv)"
 
 # poetry
 export PATH="$HOME/.poetry/bin:$PATH"

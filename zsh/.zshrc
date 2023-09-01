@@ -38,6 +38,8 @@ source $ZDOTDIR/.zsh_aliases
 source $ZDOTDIR/plugins.sh
 
 # scripts
-fpath+=('/Users/mlle/.local/bin/scripts/')
+fpath+=($HOME'/.local/bin/scripts/')
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+[ -f "/Users/$USER'/.ghcup/env" ] && source "/Users/'$USER'/.ghcup/env" # ghcup-env

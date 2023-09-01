@@ -1,13 +1,23 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */usr/local/opt/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}/opt/homebrew/opt/fzf/bin"
+#
+
+# if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+#   FZF_DIR="/home/linuxbrew/.linuxbrew/opt/fzf"
+# elif [[ "$OSTYPE" == "darwin"* ]]; then
+#   FZF_DIR="/usr/homebrew/opt/fzf"
+# fi
+
+FZF_DIR="$HOMEBREW_DIR/opt/fzf"
+
+if [[ ! "$PATH" == "*$FZF_DIR/bin*" ]]; then
+  PATH="${PATH:+${PATH}:}$FZF_DIR/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/opt/homebrew/opt/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$FZF_DIR/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/opt/homebrew/opt/fzf/shell/key-bindings.zsh"
+source "$FZF_DIR/shell/key-bindings.zsh"
