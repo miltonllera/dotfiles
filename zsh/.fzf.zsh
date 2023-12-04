@@ -8,7 +8,7 @@
 #   FZF_DIR="/usr/homebrew/opt/fzf"
 # fi
 
-FZF_DIR="$HOMEBREW_DIR/opt/fzf"
+FZF_DIR="/usr/bin/fzf"
 
 if [[ ! "$PATH" == "*$FZF_DIR/bin*" ]]; then
   PATH="${PATH:+${PATH}:}$FZF_DIR/bin"

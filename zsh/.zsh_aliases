@@ -1,9 +1,10 @@
 # brew
-alias upgrade="brew upgrade"
-alias remove="brew remove"
+alias upgrade="sudo apt update; sudo apt upgrade"
+alias remove="sudo apt remove"
 
 # cat to bat
-alias cat="bat"
+alias bat="batcat"
+alias cat="batcat"
 
 # ls
 alias ls="exa"
@@ -26,12 +27,4 @@ alias gcl="git clone"
 alias gl="git log --graph --all --oneline"
 
 # python
-alias python="python3"
-alias crl="cd /Users/monterml/Projects/crl/"
-
-# ssh
-alias ssht='ssh -t'
-alias bindport='bash /Users/monterml/.local/bin/scripts/bindport'
-
-# ssh with kitty so configs work on remote
-[[ "$TERM" == "xterm-kitty" ]] && alias ssh="kitty +kitten ssh"
+# alias python="python3"
