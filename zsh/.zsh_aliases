@@ -6,7 +6,7 @@ alias remove="brew remove"
 alias cat="bat"
 
 # ls
-alias ls="exa"
+alias ls="eza"
 alias l="ls"
 
 alias la="ls -a"

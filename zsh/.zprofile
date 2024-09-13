@@ -21,6 +21,21 @@ eval "$(pyenv virtualenv-init -)"
 # poetry
 export PATH=$PATH:"$HOME/Library/Python/3.9/bin"
 
+# >>> juliaup initialize >>>
+
+# !! Contents within this block are managed by juliaup !!
+
+case ":$PATH:" in
+    *:/Users/mlle/.local/bin/julia/bin:*)
+        ;;
+
+    *)
+        export PATH=/Users/mlle/.local/bin/julia/bin${PATH:+:${PATH}}
+        ;;
+esac
+
+# <<< juliaup initialize <<<
+
 # OpenBLAS and LAPACK
 
 # export LDFLAGS="-L/opt/homebrew/opt/openblas/lib"
