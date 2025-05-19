@@ -10,10 +10,13 @@ eval "$($HOMEBREW_DIR shellenv)"
 export PATH="$HOME/.poetry/bin:$PATH"
 
 # pyenv
-export PYENV_ROOT="$HOME/.local/bin/pyenv/"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# export PYENV_ROOT="$HOME/.local/bin/pyenv/"
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
+
+# uv
+. "$HOME/.local/bin/env"
 
 # auto-activation
  # if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi

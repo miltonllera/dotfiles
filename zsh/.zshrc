@@ -40,6 +40,13 @@ source $ZDOTDIR/plugins.sh
 # scripts
 fpath+=('/Users/mlle/.local/bin/scripts/')
 
+# julia
+if [ -d "/Users/mlle/.juliaup/bin" ]; then
+  path+=("/Users/mlle/.juliaup/bin")
+fi
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export OPENAI_API_KEY=$(eval cat ~/.ssh/open_ai_key)
 
 neofetch
