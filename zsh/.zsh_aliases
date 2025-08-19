@@ -2,6 +2,9 @@
 alias upgrade="brew upgrade"
 alias remove="brew remove"
 
+# nvim
+alias vi="nvim"
+
 # cat to bat
 alias cat="bat"
 
@@ -31,6 +34,7 @@ alias crl="cd /Users/monterml/Projects/crl/"
 alias uvr="uv run"
 alias uvrp="uv run python"
 alias uvrm="uv run python -m"
+alias uvi="uv run nvim"
 alias uvim="uv run nvim"
 
 # ssh
